@@ -1,8 +1,10 @@
 import { Box, Stack, Typography, TextField, Button } from "@mui/material";
 import Illustrationsignupdesktop from "../assets/Illustrationsignupdesktop";
 import Iconlist from "../assets/Iconlist";
+import { useTheme } from '@mui/material/styles';
 import { useState } from "react";
 const Emailpage = () => {
+    const theme = useTheme();
   const [text, setText] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [success, setSuccess] = useState(false);
@@ -15,7 +17,7 @@ const Emailpage = () => {
       setErrorMessage("Invalid email format");
     } else {
       setErrorMessage("");
-      setText("");
+
       setSuccess(true);
     }
   };
@@ -29,6 +31,7 @@ const Emailpage = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+       
       }}
     >
       {!success ? (
@@ -42,6 +45,10 @@ const Emailpage = () => {
               borderRadius: "10px",
               display: "flex",
               flexDirection: "row",
+              [theme.breakpoints.down("sm")]: {
+          flexDirection: "column",
+          alignItems: "center",
+        },
             }}
           >
             <Stack
@@ -185,13 +192,25 @@ const Emailpage = () => {
             </Box>
 
             <Typography fontSize={"14px"} color={"hsl(234, 29%, 20%)"}>
-              A confirmation email has been sent to {text}. Please open it and
-              click the button inside to confirm your subscription.
+              A confirmation email has been sent to{" "}
+              <span style={{ fontWeight: "bold" }}>{text}</span> . Please open
+              it and click the button inside to confirm your subscription.
             </Typography>
             <Button
-              sx={{ mt: "1rem", backgroundColor: "hsl(234, 29%, 20%)" }}
+              sx={{
+                mt: "1rem",
+                backgroundColor: "hsl(234, 29%, 20%)",
+                "&:hover": {
+                  color: "white",
+                  transition: "background-color 0.5s ease",
+                  backgroundColor: "hsl(4, 100%, 67%)",
+                },
+              }}
               variant="contained"
-              onClick={() => setSuccess(false)}
+              onClick={() => {
+                setSuccess(false);
+                setText("");
+              }}
             >
               Dismiss Message
             </Button>
