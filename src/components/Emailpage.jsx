@@ -1,10 +1,10 @@
 import { Box, Stack, Typography, TextField, Button } from "@mui/material";
 import Illustrationsignupdesktop from "../assets/Illustrationsignupdesktop";
 import Iconlist from "../assets/Iconlist";
-import { useTheme } from '@mui/material/styles';
+import { useTheme } from "@mui/material/styles";
 import { useState } from "react";
 const Emailpage = () => {
-    const theme = useTheme();
+  const theme = useTheme();
   const [text, setText] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [success, setSuccess] = useState(false);
@@ -31,7 +31,6 @@ const Emailpage = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-       
       }}
     >
       {!success ? (
@@ -46,9 +45,9 @@ const Emailpage = () => {
               display: "flex",
               flexDirection: "row",
               [theme.breakpoints.down("sm")]: {
-          flexDirection: "column",
-          alignItems: "center",
-        },
+                flexDirection: "column",
+                alignItems: "center",
+              },
             }}
           >
             <Stack
