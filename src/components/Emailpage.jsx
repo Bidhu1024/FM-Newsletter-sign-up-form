@@ -100,13 +100,18 @@ const Emailpage = () => {
                   >
                     <Iconlist />
                     <Typography color={"hsl(234, 29%, 20%)"} fontWeight="400">
-                    And much more!
+                      And much more!
                     </Typography>
-                    
                   </Box>
                 </Box>
                 <Box sx={{ mt: "1rem" }}>
-                  <Typography color={"hsl(234, 29%, 20%)"} fontWeight="bold" fontSize={"12px"}>Email Address</Typography>
+                  <Typography
+                    color={"hsl(234, 29%, 20%)"}
+                    fontWeight="bold"
+                    fontSize={"12px"}
+                  >
+                    Email Address
+                  </Typography>
                   <Box>
                     <TextField
                       fullWidth
@@ -170,7 +175,11 @@ const Emailpage = () => {
             <Box
               sx={{ display: "flex", justifyContent: "center", width: "100%" }}
             >
-              <Typography fontSize="2rem" fontWeight="700" color="hsl(234, 29%, 20%)">
+              <Typography
+                fontSize="2rem"
+                fontWeight="700"
+                color="hsl(234, 29%, 20%)"
+              >
                 Thanks for Subscribing!
               </Typography>
             </Box>
@@ -180,7 +189,7 @@ const Emailpage = () => {
               click the button inside to confirm your subscription.
             </Typography>
             <Button
-              sx={{ mt: "1rem",backgroundColor:'hsl(234, 29%, 20%)' }}
+              sx={{ mt: "1rem", backgroundColor: "hsl(234, 29%, 20%)" }}
               variant="contained"
               onClick={() => setSuccess(false)}
             >
